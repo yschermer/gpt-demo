@@ -1,0 +1,41 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Get relevant books",
+    "description": "Gets relevant books based on the user' prompt.",
+    "version": "v1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://europe-west4-yoshio-405507.cloudfunctions.net"
+    }
+  ],
+  "paths": {
+    "/hello": {
+      "post": {
+        "description": "Gets relevant books based on the user' prompt",
+        "operationId": "GetRelevantBooks",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string"
+                  }
+                },
+                "required": ["input"]
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
