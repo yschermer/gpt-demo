@@ -1,17 +1,20 @@
-#   gcloud functions deploy hello \
+#   gcloud functions deploy jcb \
 #     --gen2 \
 #     --runtime=python310 \
 #     --region=europe-west4 \
 #     --source=. \
-#     --entry-point=hello_world \
+#     --entry-point=jcb \
 #     --trigger-http \
 #     --allow-unauthenticated
 
 import json
 import functions_framework
 
+# @functions_framework.http
+# def hue(request):
+
 @functions_framework.http
-def hello_world(request):
+def jcb(request):
     # parse json from request which contains something like {"input": "some text"}
     request_json = request.get_json()
 
